@@ -60,6 +60,6 @@ Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform | Select-
 2. Copy and execute this command to check your Version of the running Opertatingsystem
 
 ```   
-[environment]::OSVersion.Version | Select-Object Build
+Get-WmiObject Win32_OperatingSystem | Select PSComputerName, Caption, OSArchitecture, Version, BuildNumber | FL
 ```
 # to be countinue....
