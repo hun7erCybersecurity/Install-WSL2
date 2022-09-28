@@ -3,7 +3,7 @@
 
 
 
-# Install-WSL2
+# Install-WSL 2
 ## Here you will find how you install WSL2 on a Windows operating system.
 
 ###  My Source
@@ -14,10 +14,12 @@
 
 
 
-## Install WSL2 with Powershell step by step:
+## Install WSL 2 with Powershell step by step:
 * Enable Windows features for WSL 
 * Check requirements for running WSL 2
 * Download and Install the Linux kernel update package
+* Set WSL 2 as your default version
+* Placeholder
 * Placeholder
 
 
@@ -27,7 +29,7 @@
 
 <br />
 
-2. Copy and Execute these commands line by line:
+2. Copy, insert and Execute these commands line by line:
 
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux, VirtualMachinePlatform -All -NoRestart
@@ -49,7 +51,7 @@ Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform | Select-
 
 ## Check requirements for running WSL 2:
 
-1. To update to WSL 2, you must be running Windows 10...
+1. To update to WSL 2, you must be running Windows 10
 
    * For x64 systems: Version 1903 or later, with Build 18362 or later.
    * For ARM64 systems: Version 2004 or later, with Build 19041 or later.
@@ -61,13 +63,33 @@ Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform | Select-
 ```   
 Get-WmiObject Win32_OperatingSystem | Select PSComputerName, Caption, OSArchitecture, Version, BuildNumber | FL
 ```
+<br/>
 
 ## Download and Install the Linux kernel update package:
 1. Download the latest package:
 
-   * [WSL2 Linux kernel update package for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+    * [WSL2 Linux kernel update package for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+
+<br/>
  
-2. Install the Linux kernel update package.
+2. Install the Linux kernel update package:
+
+    * follow the installation wizard
+
+<br/>
+
+## Set WSL 2 as your default version
+
+1. Start your Powershell as Administrator.
+
+<br />
+
+2. Copy, insert and Execute these commands line by line:
+
+```
+wsl --set-default-version 2
+```
+
 # to be countinue....
 
 
