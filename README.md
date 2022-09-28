@@ -14,19 +14,20 @@
 
 
 
-## Install WSL2 with Powershell:
+## Install WSL2 with Powershell step by step:
 * Enable Windows features for WSL 
 * Check requirements for running WSL 2
-* Placeholder
+* Download and Install the Linux kernel update package
 * Placeholder
 
 
 ## Enable Windows features for WSL:
+
 1. Start your Powershell as Administrator.
 
 <br />
 
-2. Copy and Execute these commands line by line
+2. Copy and Execute these commands line by line:
 
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux, VirtualMachinePlatform -All -NoRestart
@@ -36,7 +37,7 @@ Restart-Computer
 ```
 <br />
 
-3. After the reboot of your system, check with these commands if the state of the Optional features are "Enabled"
+3. After the reboot of your system, check with these commands if the state of the Optional features are "Enabled":
 
 ```
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux | Select-Object State
@@ -46,7 +47,7 @@ Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform | Select-
 
 <br />
 
-## Check requirements for running WSL 2
+## Check requirements for running WSL 2:
 
 1. To update to WSL 2, you must be running Windows 10...
 
@@ -60,6 +61,13 @@ Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform | Select-
 ```   
 Get-WmiObject Win32_OperatingSystem | Select PSComputerName, Caption, OSArchitecture, Version, BuildNumber | FL
 ```
+
+## Download and Install the Linux kernel update package:
+1. Download the latest package:
+
+   * [WSL2 Linux kernel update package for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+ 
+2. Install the Linux kernel update package.
 # to be countinue....
 
 
