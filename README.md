@@ -19,8 +19,8 @@
 * Check requirements for running WSL 2
 * Download and Install the Linux kernel update package
 * Set WSL 2 as your default version
-* Placeholder
-* Placeholder
+* Install your Linux distribution of choice
+* Set Username and Password of the machine
 
 
 ## Enable Windows features for WSL:
@@ -46,7 +46,6 @@ Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linu
 
 Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform | Select-Object State
 ```
-
 <br />
 
 ## Check requirements for running WSL 2:
@@ -89,7 +88,51 @@ Get-WmiObject Win32_OperatingSystem | Select PSComputerName, Caption, OSArchitec
 ```
 wsl --set-default-version 2
 ```
+<br/>
 
-# to be countinue....
+## Find and Install your Linux distribution of choice
+
+1. Start your Powershell as Administrator.
+
+<br/>
+
+2. Find your Linux Distribution with this command:
+```
+wsl -l -o
+```
+<br/>
+
+3. Install your Distribution of choice:
+
+```
+wsl --install -d <Distribution-NAME>
+```
+<br/>
+
+## Set Username and Password of the machine
+
+1. Choice a username for your machine, if you see the folloing text:
+
+```
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: 
+```
+<br/>
+
+2. Choice a password for your machine, if you see the folloing text:
+```
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: <your username>
+New password:
+```
+<br/>
+
+3. Retype your password.
+
+# Done
 
 
