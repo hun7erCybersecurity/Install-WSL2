@@ -14,27 +14,52 @@
 
 
 
-## Install WSL2 with Powershell
+## Install WSL2 with Powershell:
 * Enable Windows features for WSL 
 * Check requirements for running WSL 2
 * test
 * test
 
 
-### Enable Windows features for WSL
+## Enable Windows features for WSL:
+1. Start your Powershell as Administrator.
+
+<br />
+
+2. Copy and Execute these commands line by line
 
 ```
-Enable-WindowsOptionalFeature -FeatureName Microsoft-Windows-Subsystem-Linux /all /norestart
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -All -NoRestart
 
-Enable-WindowsOptionalFeature -FeatureName VirtualMachinePlatform /all /norestart
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All -NoRestart
+
+Restart-Computer
 
 ```
+<br />
 
-### Check requirements for running WSL 2
+3. After the reboot of your system, check with these commands if the state of the Optional features are Enabled
 
-To update to WSL 2, you must be running Windows 10...
+```
+Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux | Select-Object State
+
+Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform | Select-Object State
+```
+
+<br />
+
+## Check requirements for running WSL 2
+
+1. To update to WSL 2, you must be running Windows 10...
 
    * For x64 systems: Version 1903 or later, with Build 18362 or later.
    * For ARM64 systems: Version 2004 or later, with Build 19041 or later.
    
+<br/>
+
+2. Copy and execute this command to check your Version of the running Opertatingsystem
+
+```   
+[environment]::OSVersion.Version | Select-Object Build
+```
 # to be countinue....
