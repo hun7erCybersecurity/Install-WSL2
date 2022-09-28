@@ -17,8 +17,8 @@
 ## Install WSL2 with Powershell:
 * Enable Windows features for WSL 
 * Check requirements for running WSL 2
-* test
-* test
+* Placeholder
+* Placeholder
 
 
 ## Enable Windows features for WSL:
@@ -29,16 +29,14 @@
 2. Copy and Execute these commands line by line
 
 ```
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -All -NoRestart
-
-Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All -NoRestart
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux, VirtualMachinePlatform -All -NoRestart
 
 Restart-Computer
 
 ```
 <br />
 
-3. After the reboot of your system, check with these commands if the state of the Optional features are Enabled
+3. After the reboot of your system, check with these commands if the state of the Optional features are "Enabled"
 
 ```
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux | Select-Object State
@@ -63,3 +61,5 @@ Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform | Select-
 Get-WmiObject Win32_OperatingSystem | Select PSComputerName, Caption, OSArchitecture, Version, BuildNumber | FL
 ```
 # to be countinue....
+
+
