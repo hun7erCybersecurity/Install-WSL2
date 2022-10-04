@@ -31,7 +31,7 @@
 
 2. Copy, insert and Execute these commands line by line:
 
-```
+```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux, VirtualMachinePlatform -All -NoRestart
 
 Restart-Computer
@@ -41,7 +41,7 @@ Restart-Computer
 
 3. After the reboot of your system, check with these commands if the state of the Optional features are "Enabled":
 
-```
+```powershell
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux | Select-Object State
 
 Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform | Select-Object State
@@ -59,7 +59,7 @@ Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform | Select-
 
 2. Copy and execute this command to check your Version of the running Opertatingsystem
 
-```   
+```powershell   
 Get-WmiObject Win32_OperatingSystem | Select PSComputerName, Caption, OSArchitecture, Version, BuildNumber | FL
 ```
 <br/>
@@ -85,7 +85,7 @@ Get-WmiObject Win32_OperatingSystem | Select PSComputerName, Caption, OSArchitec
 
 2. Copy, insert and Execute these commands line by line:
 
-```
+```powershell
 wsl --set-default-version 2
 ```
 <br/>
@@ -97,14 +97,14 @@ wsl --set-default-version 2
 <br/>
 
 2. Find your Linux Distribution with this command:
-```
+```powershell
 wsl -l -o
 ```
 <br/>
 
 3. Install your Distribution of choice:
 
-```
+```powershell
 wsl --install -d <Distribution-NAME>
 ```
 <br/>
@@ -113,7 +113,7 @@ wsl --install -d <Distribution-NAME>
 
 1. Choice a username for your machine, if you see the folloing text:
 
-```
+```notepad
 Installing, this may take a few minutes...
 Please create a default UNIX user account. The username does not need to match your Windows username.
 For more information visit: https://aka.ms/wslusers
@@ -122,7 +122,7 @@ Enter new UNIX username:
 <br/>
 
 2. Choice a password for your machine, if you see the folloing text:
-```
+```notepad
 Installing, this may take a few minutes...
 Please create a default UNIX user account. The username does not need to match your Windows username.
 For more information visit: https://aka.ms/wslusers
